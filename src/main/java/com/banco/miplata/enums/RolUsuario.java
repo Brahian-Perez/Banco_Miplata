@@ -1,6 +1,6 @@
 package com.banco.miplata.enums;
 
-public enum RolUser {
-    ADMIN,
-    USER
+public enum RolUsuario {
+    ADMINISTRADOR,
+    CLIENTE
 }

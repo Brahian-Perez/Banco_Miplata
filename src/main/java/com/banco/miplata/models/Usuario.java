@@ -1,6 +1,6 @@
 package com.banco.miplata.models;
 
-import com.banco.miplata.enums.RolUser;
+import com.banco.miplata.enums.RolUsuario;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
@@ -31,11 +32,11 @@ public class User {
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 40)
     private String nombreUsuario;
 
-    @Column(name = "password", nullable = false, length = 255)
-    private String password;
-
     @Column(name = "password_hash", nullable = false, length = 255)
     private String passwordHash;
+
+    @Column(name = "password_encriptada", nullable = false, length = 255)
+    private String passwordEncriptada;
 
     @Column(name = "intentos_fallidos", nullable = false)
     private Short intentosFallidos = 0;
@@ -45,7 +46,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rol", nullable = false, length = 20)
-    private RolUser rol = RolUser.USER;
+    private RolUsuario rol = RolUsuario.CLIENTE;
 
     @Column(name = "avatar_url", length = 255)
     private String avatarUrl;
