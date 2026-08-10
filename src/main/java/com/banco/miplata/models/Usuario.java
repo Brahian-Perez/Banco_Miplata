@@ -29,6 +29,9 @@ public class Usuario {
     @Column(name = "celular", length = 20)
     private String celular;
 
+    @Column(name = "correo", nullable = false, unique = true, length = 100)
+    private String correo;
+
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 40)
     private String nombreUsuario;
 
@@ -41,8 +44,8 @@ public class Usuario {
     @Column(name = "intentos_fallidos", nullable = false)
     private Short intentosFallidos = 0;
 
-    @Column(name = "bloqueado", nullable = false)
-    private Boolean bloqueado = false;
+    @Column(name = "activo", nullable = false)
+    private Boolean activo = true;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rol", nullable = false, length = 20)
