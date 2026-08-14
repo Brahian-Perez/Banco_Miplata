@@ -17,7 +17,8 @@ import java.time.LocalDateTime;
 public class TarjetaCredito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column Long id;
+    @Column(name = "id_tarjeta")
+    private Long id;
 
     @Column(name = "numero_tarjeta", nullable = false, unique = true, length = 20)
     private String numeroTarjeta;

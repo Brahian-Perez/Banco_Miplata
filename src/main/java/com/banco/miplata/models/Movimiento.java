@@ -17,8 +17,8 @@ import java.time.LocalDateTime;
 public class Movimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tipo", nullable = false, length = 20)
-    private Long Id;
+    @Column(name = "id_movimiento")
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo", nullable = false, length = 20)

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "cuenta_corriente")
-@DiscriminatorColumn(name = "CORRIENTE")
+@DiscriminatorValue("CORRIENTE")
 @PrimaryKeyJoinColumn(name ="id_cuenta")
 
 public class CuentaCorriente extends Cuenta {

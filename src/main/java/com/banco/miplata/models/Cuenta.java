@@ -12,11 +12,16 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "cuenta")
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "Tipo", discriminatorType = DiscriminatorType.STRING, length = 20)
+@DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING, length = 20)
 @Getter
 @Setter
 @NoArgsConstructor
-public class Cuenta {
+public abstract class Cuenta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cuenta")
+    private Long id;
+
     @Column(name = "numero_cuenta", nullable = false, unique = true, length = 20)
     private String numeroCuenta;
 
